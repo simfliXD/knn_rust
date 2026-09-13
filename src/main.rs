@@ -35,8 +35,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     let accuracy = accuracy(&true_labels, &predicted_labels);
     println!("ACCURACY((tp + tf) / total) IS: {accuracy}");
 
-    let precision = precision(&true_labels, &predicted_labels, "A");
-    println!("PRECISION FOR A (tp / (tp +fp)) IS: {precision}");
+    let precision = precision(&true_labels, &predicted_labels, "höger");
+    println!("PRECISION FOR höger (tp / (tp + fp)) IS: {precision}");
 
     Ok(())
 }
