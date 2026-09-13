@@ -41,7 +41,7 @@ def generate_person():
     return invandrare, age, income, urb, label
 
 
-with open("dataset.csv", "w") as f:
+with open("data.csv", "w") as f:
     f.write("invandrare,ålder,inkomst,region,label\n")
     for _ in range(N_ROWS):
         invandrare, age, income, urb, label = generate_person()
