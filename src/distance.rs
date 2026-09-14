@@ -9,5 +9,5 @@ pub fn euclidean_distance(point_a: &parse_data::Point, point_b: &parse_data::Poi
         sum += diff * diff;
     }
 
-    sum.sqrt()
+    sum // No need to square root.
 }
