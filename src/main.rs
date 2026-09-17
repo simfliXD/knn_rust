@@ -14,18 +14,21 @@ fn main() -> Result<(), Box<dyn Error>> {
         parse_data::read_dataset("data.csv")?, // Data points
     );
 
+    //let predicted_labels = String::new;
     for i in &knn.data_points {
         println!("{:?}", i);
         // println!("{:?}", knn.distances(&i));
         println!("Prediction: {:?}", knn.predict(i));
+        //predicted_labels += knn.predict(i);
     }
+
 
     let true_labels = knn
         .data_points
         .iter()
         .map(|i| i.label.clone())
         .collect::<Vec<String>>();
-
+    // holy unoptimized
     let predicted_labels = knn
         .data_points
         .iter()

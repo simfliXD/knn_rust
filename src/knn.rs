@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
-use crate::distance::euclidean_distance;
 use crate::parse_data::Point;
+use crate::distance::squared_euclidean_distance;
 
 pub struct KNearestNeighbors {
     pub k: usize,
@@ -13,11 +13,12 @@ impl KNearestNeighbors {
         Self { k, data_points }
     }
 
+    // returns the distances to every point from an query point
     pub fn distances(&self, query_point: &Point) -> Vec<f64> {
         let mut distances = Vec::new();
 
         for stored_point in &self.data_points {
-            distances.push(euclidean_distance(stored_point, query_point));
+            distances.push(squared_euclidean_distance(stored_point, query_point));
         }
 
         distances
@@ -64,7 +65,6 @@ impl KNearestNeighbors {
                 most_votes = count;
             }
         }
-
         prediction
     }
 }

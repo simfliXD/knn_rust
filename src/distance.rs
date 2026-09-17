@@ -1,6 +1,6 @@
 use crate::parse_data;
 
-pub fn euclidean_distance(point_a: &parse_data::Point, point_b: &parse_data::Point) -> f64 {
+pub fn squared_euclidean_distance(point_a: &parse_data::Point, point_b: &parse_data::Point) -> f64 {
     let mut sum = 0.0;
 
     // Calculate differance between each vector value and square it.
